@@ -1,0 +1,14 @@
+202:
+HC03_VC134,Percent; PLACE OF BIRTH - Foreign born
+HC03_VC94,Percent; EDUCATIONAL ATTAINMENT - Percent bachelor's degree or higher
+HC03_VC168,Percent; LANGUAGE SPOKEN AT HOME - Language other than English
+HC03_VC40,Percent; MARITAL STATUS - Divorced - Males 15 years and over
+HC03_VC18,Percent; HOUSEHOLDS BY TYPE - Households with one or more people 65 years and over
+
+203:
+HC03_VC13,Percent; EMPLOYMENT STATUS - Percent Unemployed 
+HC03_VC75,"Percent; INCOME AND BENEFITS (IN 2010 INFLATION-ADJUSTED DOLLARS) - Less than $10,000" 
+HC03_VC156,Percent; PERCENTAGE OF FAMILIES AND PEOPLE WHOSE INCOME IN THE PAST 12 MONTHS IS BELOW THE POVERTY LEVEL - All families 
+HC03_VC166,Percent; PERCENTAGE OF FAMILIES AND PEOPLE WHOSE INCOME IN THE PAST 12 MONTHS IS BELOW THE POVERTY LEVEL - All people
+HC03_VC31,Percent; COMMUTING TO WORK - Public transportation (excluding taxicab) 
+HC03_VC59,"Percent; INDUSTRY - Educational services, and health care and social assistance" 

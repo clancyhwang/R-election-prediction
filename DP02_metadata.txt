@@ -1,0 +1,357 @@
+GEO.id,Id
+GEO.id2,Id2
+GEO.display-label,Geography
+POPGROUP.id,Id
+POPGROUP.display-label,POPGROUP
+HC01_VC03,Estimate; HOUSEHOLDS BY TYPE - Total households
+HC02_VC03,Estimate Margin of Error; HOUSEHOLDS BY TYPE - Total households
+HC03_VC03,Percent; HOUSEHOLDS BY TYPE - Total households
+HC04_VC03,Percent Margin of Error; HOUSEHOLDS BY TYPE - Total households
+HC01_VC04,Estimate; HOUSEHOLDS BY TYPE - Family households (families)
+HC02_VC04,Estimate Margin of Error; HOUSEHOLDS BY TYPE - Family households (families)
+HC03_VC04,Percent; HOUSEHOLDS BY TYPE - Family households (families)
+HC04_VC04,Percent Margin of Error; HOUSEHOLDS BY TYPE - Family households (families)
+HC01_VC06,Estimate; HOUSEHOLDS BY TYPE - Family households (families) - With own children under 18 years
+HC02_VC06,Estimate Margin of Error; HOUSEHOLDS BY TYPE - Family households (families) - With own children under 18 years
+HC03_VC06,Percent; HOUSEHOLDS BY TYPE - Family households (families) - With own children under 18 years
+HC04_VC06,Percent Margin of Error; HOUSEHOLDS BY TYPE - Family households (families) - With own children under 18 years
+HC01_VC07,Estimate; HOUSEHOLDS BY TYPE - Family households (families) - Married-couple family
+HC02_VC07,Estimate Margin of Error; HOUSEHOLDS BY TYPE - Family households (families) - Married-couple family
+HC03_VC07,Percent; HOUSEHOLDS BY TYPE - Family households (families) - Married-couple family
+HC04_VC07,Percent Margin of Error; HOUSEHOLDS BY TYPE - Family households (families) - Married-couple family
+HC01_VC08,Estimate; HOUSEHOLDS BY TYPE - Family households (families) - Married-couple family - With own children under 18 years
+HC02_VC08,Estimate Margin of Error; HOUSEHOLDS BY TYPE - Family households (families) - Married-couple family - With own children under 18 years
+HC03_VC08,Percent; HOUSEHOLDS BY TYPE - Family households (families) - Married-couple family - With own children under 18 years
+HC04_VC08,Percent Margin of Error; HOUSEHOLDS BY TYPE - Family households (families) - Married-couple family - With own children under 18 years
+HC01_VC09,"Estimate; HOUSEHOLDS BY TYPE - Family households (families) - Male householder, no wife present, family"
+HC02_VC09,"Estimate Margin of Error; HOUSEHOLDS BY TYPE - Family households (families) - Male householder, no wife present, family"
+HC03_VC09,"Percent; HOUSEHOLDS BY TYPE - Family households (families) - Male householder, no wife present, family"
+HC04_VC09,"Percent Margin of Error; HOUSEHOLDS BY TYPE - Family households (families) - Male householder, no wife present, family"
+HC01_VC10,"Estimate; HOUSEHOLDS BY TYPE - Family households (families) - Male householder, no wife present, family - With own children under 18 years"
+HC02_VC10,"Estimate Margin of Error; HOUSEHOLDS BY TYPE - Family households (families) - Male householder, no wife present, family - With own children under 18 years"
+HC03_VC10,"Percent; HOUSEHOLDS BY TYPE - Family households (families) - Male householder, no wife present, family - With own children under 18 years"
+HC04_VC10,"Percent Margin of Error; HOUSEHOLDS BY TYPE - Family households (families) - Male householder, no wife present, family - With own children under 18 years"
+HC01_VC11,"Estimate; HOUSEHOLDS BY TYPE - Family households (families) - Female householder, no husband present, family"
+HC02_VC11,"Estimate Margin of Error; HOUSEHOLDS BY TYPE - Family households (families) - Female householder, no husband present, family"
+HC03_VC11,"Percent; HOUSEHOLDS BY TYPE - Family households (families) - Female householder, no husband present, family"
+HC04_VC11,"Percent Margin of Error; HOUSEHOLDS BY TYPE - Family households (families) - Female householder, no husband present, family"
+HC01_VC12,"Estimate; HOUSEHOLDS BY TYPE - Family households (families) - Female householder, no husband present, family - With own children under 18 years"
+HC02_VC12,"Estimate Margin of Error; HOUSEHOLDS BY TYPE - Family households (families) - Female householder, no husband present, family - With own children under 18 years"
+HC03_VC12,"Percent; HOUSEHOLDS BY TYPE - Family households (families) - Female householder, no husband present, family - With own children under 18 years"
+HC04_VC12,"Percent Margin of Error; HOUSEHOLDS BY TYPE - Family households (families) - Female householder, no husband present, family - With own children under 18 years"
+HC01_VC13,Estimate; HOUSEHOLDS BY TYPE - Nonfamily households
+HC02_VC13,Estimate Margin of Error; HOUSEHOLDS BY TYPE - Nonfamily households
+HC03_VC13,Percent; HOUSEHOLDS BY TYPE - Nonfamily households
+HC04_VC13,Percent Margin of Error; HOUSEHOLDS BY TYPE - Nonfamily households
+HC01_VC14,Estimate; HOUSEHOLDS BY TYPE - Nonfamily households - Householder living alone
+HC02_VC14,Estimate Margin of Error; HOUSEHOLDS BY TYPE - Nonfamily households - Householder living alone
+HC03_VC14,Percent; HOUSEHOLDS BY TYPE - Nonfamily households - Householder living alone
+HC04_VC14,Percent Margin of Error; HOUSEHOLDS BY TYPE - Nonfamily households - Householder living alone
+HC01_VC15,Estimate; HOUSEHOLDS BY TYPE - Nonfamily households - Householder living alone - 65 years and over
+HC02_VC15,Estimate Margin of Error; HOUSEHOLDS BY TYPE - Nonfamily households - Householder living alone - 65 years and over
+HC03_VC15,Percent; HOUSEHOLDS BY TYPE - Nonfamily households - Householder living alone - 65 years and over
+HC04_VC15,Percent Margin of Error; HOUSEHOLDS BY TYPE - Nonfamily households - Householder living alone - 65 years and over
+HC01_VC17,Estimate; HOUSEHOLDS BY TYPE - Households with one or more people under 18 years
+HC02_VC17,Estimate Margin of Error; HOUSEHOLDS BY TYPE - Households with one or more people under 18 years
+HC03_VC17,Percent; HOUSEHOLDS BY TYPE - Households with one or more people under 18 years
+HC04_VC17,Percent Margin of Error; HOUSEHOLDS BY TYPE - Households with one or more people under 18 years
+HC01_VC18,Estimate; HOUSEHOLDS BY TYPE - Households with one or more people 65 years and over
+HC02_VC18,Estimate Margin of Error; HOUSEHOLDS BY TYPE - Households with one or more people 65 years and over
+HC03_VC18,Percent; HOUSEHOLDS BY TYPE - Households with one or more people 65 years and over
+HC04_VC18,Percent Margin of Error; HOUSEHOLDS BY TYPE - Households with one or more people 65 years and over
+HC01_VC20,Estimate; HOUSEHOLDS BY TYPE - Average household size
+HC02_VC20,Estimate Margin of Error; HOUSEHOLDS BY TYPE - Average household size
+HC03_VC20,Percent; HOUSEHOLDS BY TYPE - Average household size
+HC04_VC20,Percent Margin of Error; HOUSEHOLDS BY TYPE - Average household size
+HC01_VC21,Estimate; HOUSEHOLDS BY TYPE - Average family size
+HC02_VC21,Estimate Margin of Error; HOUSEHOLDS BY TYPE - Average family size
+HC03_VC21,Percent; HOUSEHOLDS BY TYPE - Average family size
+HC04_VC21,Percent Margin of Error; HOUSEHOLDS BY TYPE - Average family size
+HC01_VC25,Estimate; RELATIONSHIP - Population in households
+HC02_VC25,Estimate Margin of Error; RELATIONSHIP - Population in households
+HC03_VC25,Percent; RELATIONSHIP - Population in households
+HC04_VC25,Percent Margin of Error; RELATIONSHIP - Population in households
+HC01_VC26,Estimate; RELATIONSHIP - Householder
+HC02_VC26,Estimate Margin of Error; RELATIONSHIP - Householder
+HC03_VC26,Percent; RELATIONSHIP - Householder
+HC04_VC26,Percent Margin of Error; RELATIONSHIP - Householder
+HC01_VC30,Estimate; RELATIONSHIP - Nonrelatives
+HC02_VC30,Estimate Margin of Error; RELATIONSHIP - Nonrelatives
+HC03_VC30,Percent; RELATIONSHIP - Nonrelatives
+HC04_VC30,Percent Margin of Error; RELATIONSHIP - Nonrelatives
+HC01_VC31,Estimate; RELATIONSHIP - Nonrelatives - Unmarried partner
+HC02_VC31,Estimate Margin of Error; RELATIONSHIP - Nonrelatives - Unmarried partner
+HC03_VC31,Percent; RELATIONSHIP - Nonrelatives - Unmarried partner
+HC04_VC31,Percent Margin of Error; RELATIONSHIP - Nonrelatives - Unmarried partner
+HC01_VC35,Estimate; MARITAL STATUS - Males 15 years and over
+HC02_VC35,Estimate Margin of Error; MARITAL STATUS - Males 15 years and over
+HC03_VC35,Percent; MARITAL STATUS - Males 15 years and over
+HC04_VC35,Percent Margin of Error; MARITAL STATUS - Males 15 years and over
+HC01_VC36,Estimate; MARITAL STATUS - Never married
+HC02_VC36,Estimate Margin of Error; MARITAL STATUS - Never married
+HC03_VC36,Percent; MARITAL STATUS - Never married
+HC04_VC36,Percent Margin of Error; MARITAL STATUS - Never married
+HC01_VC37,"Estimate; MARITAL STATUS - Now married, except separated"
+HC02_VC37,"Estimate Margin of Error; MARITAL STATUS - Now married, except separated"
+HC03_VC37,"Percent; MARITAL STATUS - Now married, except separated"
+HC04_VC37,"Percent Margin of Error; MARITAL STATUS - Now married, except separated"
+HC01_VC38,Estimate; MARITAL STATUS - Separated
+HC02_VC38,Estimate Margin of Error; MARITAL STATUS - Separated
+HC03_VC38,Percent; MARITAL STATUS - Separated
+HC04_VC38,Percent Margin of Error; MARITAL STATUS - Separated
+HC01_VC39,Estimate; MARITAL STATUS - Widowed
+HC02_VC39,Estimate Margin of Error; MARITAL STATUS - Widowed
+HC03_VC39,Percent; MARITAL STATUS - Widowed
+HC04_VC39,Percent Margin of Error; MARITAL STATUS - Widowed
+HC01_VC40,Estimate; MARITAL STATUS - Divorced
+HC02_VC40,Estimate Margin of Error; MARITAL STATUS - Divorced
+HC03_VC40,Percent; MARITAL STATUS - Divorced
+HC04_VC40,Percent Margin of Error; MARITAL STATUS - Divorced
+HC01_VC42,Estimate; MARITAL STATUS - Females 15 years and over
+HC02_VC42,Estimate Margin of Error; MARITAL STATUS - Females 15 years and over
+HC03_VC42,Percent; MARITAL STATUS - Females 15 years and over
+HC04_VC42,Percent Margin of Error; MARITAL STATUS - Females 15 years and over
+HC01_VC43,Estimate; MARITAL STATUS - Never married
+HC02_VC43,Estimate Margin of Error; MARITAL STATUS - Never married
+HC03_VC43,Percent; MARITAL STATUS - Never married
+HC04_VC43,Percent Margin of Error; MARITAL STATUS - Never married
+HC01_VC44,"Estimate; MARITAL STATUS - Now married, except separated"
+HC02_VC44,"Estimate Margin of Error; MARITAL STATUS - Now married, except separated"
+HC03_VC44,"Percent; MARITAL STATUS - Now married, except separated"
+HC04_VC44,"Percent Margin of Error; MARITAL STATUS - Now married, except separated"
+HC01_VC45,Estimate; MARITAL STATUS - Separated
+HC02_VC45,Estimate Margin of Error; MARITAL STATUS - Separated
+HC03_VC45,Percent; MARITAL STATUS - Separated
+HC04_VC45,Percent Margin of Error; MARITAL STATUS - Separated
+HC01_VC46,Estimate; MARITAL STATUS - Widowed
+HC02_VC46,Estimate Margin of Error; MARITAL STATUS - Widowed
+HC03_VC46,Percent; MARITAL STATUS - Widowed
+HC04_VC46,Percent Margin of Error; MARITAL STATUS - Widowed
+HC01_VC47,Estimate; MARITAL STATUS - Divorced
+HC02_VC47,Estimate Margin of Error; MARITAL STATUS - Divorced
+HC03_VC47,Percent; MARITAL STATUS - Divorced
+HC04_VC47,Percent Margin of Error; MARITAL STATUS - Divorced
+HC01_VC51,Estimate; FERTILITY - Number of women 15 to 50 years old who had a birth in the past 12 months
+HC02_VC51,Estimate Margin of Error; FERTILITY - Number of women 15 to 50 years old who had a birth in the past 12 months
+HC03_VC51,Percent; FERTILITY - Number of women 15 to 50 years old who had a birth in the past 12 months
+HC04_VC51,Percent Margin of Error; FERTILITY - Number of women 15 to 50 years old who had a birth in the past 12 months
+HC01_VC52,"Estimate; FERTILITY - Unmarried women (widowed, divorced, and never married)"
+HC02_VC52,"Estimate Margin of Error; FERTILITY - Unmarried women (widowed, divorced, and never married)"
+HC03_VC52,"Percent; FERTILITY - Unmarried women (widowed, divorced, and never married)"
+HC04_VC52,"Percent Margin of Error; FERTILITY - Unmarried women (widowed, divorced, and never married)"
+HC01_VC53,"Estimate; FERTILITY - Unmarried women (widowed, divorced, and never married) - Per 1,000 unmarried women"
+HC02_VC53,"Estimate Margin of Error; FERTILITY - Unmarried women (widowed, divorced, and never married) - Per 1,000 unmarried women"
+HC03_VC53,"Percent; FERTILITY - Unmarried women (widowed, divorced, and never married) - Per 1,000 unmarried women"
+HC04_VC53,"Percent Margin of Error; FERTILITY - Unmarried women (widowed, divorced, and never married) - Per 1,000 unmarried women"
+HC01_VC54,"Estimate; FERTILITY - Per 1,000 women 15 to 50 years old"
+HC02_VC54,"Estimate Margin of Error; FERTILITY - Per 1,000 women 15 to 50 years old"
+HC03_VC54,"Percent; FERTILITY - Per 1,000 women 15 to 50 years old"
+HC04_VC54,"Percent Margin of Error; FERTILITY - Per 1,000 women 15 to 50 years old"
+HC01_VC55,"Estimate; FERTILITY - Per 1,000 women 15 to 50 years old - Per 1,000 women 15 to 19 years old"
+HC02_VC55,"Estimate Margin of Error; FERTILITY - Per 1,000 women 15 to 50 years old - Per 1,000 women 15 to 19 years old"
+HC03_VC55,"Percent; FERTILITY - Per 1,000 women 15 to 50 years old - Per 1,000 women 15 to 19 years old"
+HC04_VC55,"Percent Margin of Error; FERTILITY - Per 1,000 women 15 to 50 years old - Per 1,000 women 15 to 19 years old"
+HC01_VC56,"Estimate; FERTILITY - Per 1,000 women 15 to 50 years old - Per 1,000 women 20 to 34 years old"
+HC02_VC56,"Estimate Margin of Error; FERTILITY - Per 1,000 women 15 to 50 years old - Per 1,000 women 20 to 34 years old"
+HC03_VC56,"Percent; FERTILITY - Per 1,000 women 15 to 50 years old - Per 1,000 women 20 to 34 years old"
+HC04_VC56,"Percent Margin of Error; FERTILITY - Per 1,000 women 15 to 50 years old - Per 1,000 women 20 to 34 years old"
+HC01_VC57,"Estimate; FERTILITY - Per 1,000 women 15 to 50 years old - Per 1,000 women 35 to 50 years old"
+HC02_VC57,"Estimate Margin of Error; FERTILITY - Per 1,000 women 15 to 50 years old - Per 1,000 women 35 to 50 years old"
+HC03_VC57,"Percent; FERTILITY - Per 1,000 women 15 to 50 years old - Per 1,000 women 35 to 50 years old"
+HC04_VC57,"Percent Margin of Error; FERTILITY - Per 1,000 women 15 to 50 years old - Per 1,000 women 35 to 50 years old"
+HC01_VC61,Estimate; GRANDPARENTS - Number of grandparents living with own grandchildren under 18 years
+HC02_VC61,Estimate Margin of Error; GRANDPARENTS - Number of grandparents living with own grandchildren under 18 years
+HC03_VC61,Percent; GRANDPARENTS - Number of grandparents living with own grandchildren under 18 years
+HC04_VC61,Percent Margin of Error; GRANDPARENTS - Number of grandparents living with own grandchildren under 18 years
+HC01_VC62,Estimate; GRANDPARENTS - Responsible for grandchildren
+HC02_VC62,Estimate Margin of Error; GRANDPARENTS - Responsible for grandchildren
+HC03_VC62,Percent; GRANDPARENTS - Responsible for grandchildren
+HC04_VC62,Percent Margin of Error; GRANDPARENTS - Responsible for grandchildren
+HC01_VC66,Estimate; GRANDPARENTS - Responsible for grandchildren - Years responsible for grandchildren - 3 or 4 years
+HC02_VC66,Estimate Margin of Error; GRANDPARENTS - Responsible for grandchildren - Years responsible for grandchildren - 3 or 4 years
+HC03_VC66,Percent; GRANDPARENTS - Responsible for grandchildren - Years responsible for grandchildren - 3 or 4 years
+HC04_VC66,Percent Margin of Error; GRANDPARENTS - Responsible for grandchildren - Years responsible for grandchildren - 3 or 4 years
+HC01_VC75,Estimate; SCHOOL ENROLLMENT - Population 3 years and over enrolled in school
+HC02_VC75,Estimate Margin of Error; SCHOOL ENROLLMENT - Population 3 years and over enrolled in school
+HC03_VC75,Percent; SCHOOL ENROLLMENT - Population 3 years and over enrolled in school
+HC04_VC75,Percent Margin of Error; SCHOOL ENROLLMENT - Population 3 years and over enrolled in school
+HC01_VC76,"Estimate; SCHOOL ENROLLMENT - Nursery school, preschool"
+HC02_VC76,"Estimate Margin of Error; SCHOOL ENROLLMENT - Nursery school, preschool"
+HC03_VC76,"Percent; SCHOOL ENROLLMENT - Nursery school, preschool"
+HC04_VC76,"Percent Margin of Error; SCHOOL ENROLLMENT - Nursery school, preschool"
+HC01_VC77,Estimate; SCHOOL ENROLLMENT - Kindergarten
+HC02_VC77,Estimate Margin of Error; SCHOOL ENROLLMENT - Kindergarten
+HC03_VC77,Percent; SCHOOL ENROLLMENT - Kindergarten
+HC04_VC77,Percent Margin of Error; SCHOOL ENROLLMENT - Kindergarten
+HC01_VC78,Estimate; SCHOOL ENROLLMENT - Elementary school (grades 1-8)
+HC02_VC78,Estimate Margin of Error; SCHOOL ENROLLMENT - Elementary school (grades 1-8)
+HC03_VC78,Percent; SCHOOL ENROLLMENT - Elementary school (grades 1-8)
+HC04_VC78,Percent Margin of Error; SCHOOL ENROLLMENT - Elementary school (grades 1-8)
+HC01_VC79,Estimate; SCHOOL ENROLLMENT - High school (grades 9-12)
+HC02_VC79,Estimate Margin of Error; SCHOOL ENROLLMENT - High school (grades 9-12)
+HC03_VC79,Percent; SCHOOL ENROLLMENT - High school (grades 9-12)
+HC04_VC79,Percent Margin of Error; SCHOOL ENROLLMENT - High school (grades 9-12)
+HC01_VC80,Estimate; SCHOOL ENROLLMENT - College or graduate school
+HC02_VC80,Estimate Margin of Error; SCHOOL ENROLLMENT - College or graduate school
+HC03_VC80,Percent; SCHOOL ENROLLMENT - College or graduate school
+HC04_VC80,Percent Margin of Error; SCHOOL ENROLLMENT - College or graduate school
+HC01_VC84,Estimate; EDUCATIONAL ATTAINMENT - Population 25 years and over
+HC02_VC84,Estimate Margin of Error; EDUCATIONAL ATTAINMENT - Population 25 years and over
+HC03_VC84,Percent; EDUCATIONAL ATTAINMENT - Population 25 years and over
+HC04_VC84,Percent Margin of Error; EDUCATIONAL ATTAINMENT - Population 25 years and over
+HC01_VC85,Estimate; EDUCATIONAL ATTAINMENT - Less than 9th grade
+HC02_VC85,Estimate Margin of Error; EDUCATIONAL ATTAINMENT - Less than 9th grade
+HC03_VC85,Percent; EDUCATIONAL ATTAINMENT - Less than 9th grade
+HC04_VC85,Percent Margin of Error; EDUCATIONAL ATTAINMENT - Less than 9th grade
+HC01_VC86,"Estimate; EDUCATIONAL ATTAINMENT - 9th to 12th grade, no diploma"
+HC02_VC86,"Estimate Margin of Error; EDUCATIONAL ATTAINMENT - 9th to 12th grade, no diploma"
+HC03_VC86,"Percent; EDUCATIONAL ATTAINMENT - 9th to 12th grade, no diploma"
+HC04_VC86,"Percent Margin of Error; EDUCATIONAL ATTAINMENT - 9th to 12th grade, no diploma"
+HC01_VC87,Estimate; EDUCATIONAL ATTAINMENT - High school graduate (includes equivalency)
+HC02_VC87,Estimate Margin of Error; EDUCATIONAL ATTAINMENT - High school graduate (includes equivalency)
+HC03_VC87,Percent; EDUCATIONAL ATTAINMENT - High school graduate (includes equivalency)
+HC04_VC87,Percent Margin of Error; EDUCATIONAL ATTAINMENT - High school graduate (includes equivalency)
+HC01_VC88,"Estimate; EDUCATIONAL ATTAINMENT - Some college, no degree"
+HC02_VC88,"Estimate Margin of Error; EDUCATIONAL ATTAINMENT - Some college, no degree"
+HC03_VC88,"Percent; EDUCATIONAL ATTAINMENT - Some college, no degree"
+HC04_VC88,"Percent Margin of Error; EDUCATIONAL ATTAINMENT - Some college, no degree"
+HC01_VC89,Estimate; EDUCATIONAL ATTAINMENT - Associate's degree
+HC02_VC89,Estimate Margin of Error; EDUCATIONAL ATTAINMENT - Associate's degree
+HC03_VC89,Percent; EDUCATIONAL ATTAINMENT - Associate's degree
+HC04_VC89,Percent Margin of Error; EDUCATIONAL ATTAINMENT - Associate's degree
+HC01_VC90,Estimate; EDUCATIONAL ATTAINMENT - Bachelor's degree
+HC02_VC90,Estimate Margin of Error; EDUCATIONAL ATTAINMENT - Bachelor's degree
+HC03_VC90,Percent; EDUCATIONAL ATTAINMENT - Bachelor's degree
+HC04_VC90,Percent Margin of Error; EDUCATIONAL ATTAINMENT - Bachelor's degree
+HC01_VC91,Estimate; EDUCATIONAL ATTAINMENT - Graduate or professional degree
+HC02_VC91,Estimate Margin of Error; EDUCATIONAL ATTAINMENT - Graduate or professional degree
+HC03_VC91,Percent; EDUCATIONAL ATTAINMENT - Graduate or professional degree
+HC04_VC91,Percent Margin of Error; EDUCATIONAL ATTAINMENT - Graduate or professional degree
+HC01_VC93,Estimate; EDUCATIONAL ATTAINMENT - Percent high school graduate or higher
+HC02_VC93,Estimate Margin of Error; EDUCATIONAL ATTAINMENT - Percent high school graduate or higher
+HC03_VC93,Percent; EDUCATIONAL ATTAINMENT - Percent high school graduate or higher
+HC04_VC93,Percent Margin of Error; EDUCATIONAL ATTAINMENT - Percent high school graduate or higher
+HC01_VC94,Estimate; EDUCATIONAL ATTAINMENT - Percent bachelor's degree or higher
+HC02_VC94,Estimate Margin of Error; EDUCATIONAL ATTAINMENT - Percent bachelor's degree or higher
+HC03_VC94,Percent; EDUCATIONAL ATTAINMENT - Percent bachelor's degree or higher
+HC04_VC94,Percent Margin of Error; EDUCATIONAL ATTAINMENT - Percent bachelor's degree or higher
+HC01_VC117,Estimate; RESIDENCE 1 YEAR AGO - Population 1 year and over
+HC02_VC117,Estimate Margin of Error; RESIDENCE 1 YEAR AGO - Population 1 year and over
+HC03_VC117,Percent; RESIDENCE 1 YEAR AGO - Population 1 year and over
+HC04_VC117,Percent Margin of Error; RESIDENCE 1 YEAR AGO - Population 1 year and over
+HC01_VC118,Estimate; RESIDENCE 1 YEAR AGO - Same house
+HC02_VC118,Estimate Margin of Error; RESIDENCE 1 YEAR AGO - Same house
+HC03_VC118,Percent; RESIDENCE 1 YEAR AGO - Same house
+HC04_VC118,Percent Margin of Error; RESIDENCE 1 YEAR AGO - Same house
+HC01_VC119,Estimate; RESIDENCE 1 YEAR AGO - Different house in the U.S.
+HC02_VC119,Estimate Margin of Error; RESIDENCE 1 YEAR AGO - Different house in the U.S.
+HC03_VC119,Percent; RESIDENCE 1 YEAR AGO - Different house in the U.S.
+HC04_VC119,Percent Margin of Error; RESIDENCE 1 YEAR AGO - Different house in the U.S.
+HC01_VC120,Estimate; RESIDENCE 1 YEAR AGO - Different house in the U.S. - Same county
+HC02_VC120,Estimate Margin of Error; RESIDENCE 1 YEAR AGO - Different house in the U.S. - Same county
+HC03_VC120,Percent; RESIDENCE 1 YEAR AGO - Different house in the U.S. - Same county
+HC04_VC120,Percent Margin of Error; RESIDENCE 1 YEAR AGO - Different house in the U.S. - Same county
+HC01_VC121,Estimate; RESIDENCE 1 YEAR AGO - Different house in the U.S. - Different county
+HC02_VC121,Estimate Margin of Error; RESIDENCE 1 YEAR AGO - Different house in the U.S. - Different county
+HC03_VC121,Percent; RESIDENCE 1 YEAR AGO - Different house in the U.S. - Different county
+HC04_VC121,Percent Margin of Error; RESIDENCE 1 YEAR AGO - Different house in the U.S. - Different county
+HC01_VC122,Estimate; RESIDENCE 1 YEAR AGO - Different house in the U.S. - Different county - Same state
+HC02_VC122,Estimate Margin of Error; RESIDENCE 1 YEAR AGO - Different house in the U.S. - Different county - Same state
+HC03_VC122,Percent; RESIDENCE 1 YEAR AGO - Different house in the U.S. - Different county - Same state
+HC04_VC122,Percent Margin of Error; RESIDENCE 1 YEAR AGO - Different house in the U.S. - Different county - Same state
+HC01_VC124,Estimate; RESIDENCE 1 YEAR AGO - Abroad
+HC02_VC124,Estimate Margin of Error; RESIDENCE 1 YEAR AGO - Abroad
+HC03_VC124,Percent; RESIDENCE 1 YEAR AGO - Abroad
+HC04_VC124,Percent Margin of Error; RESIDENCE 1 YEAR AGO - Abroad
+HC01_VC128,Estimate; PLACE OF BIRTH - Total population
+HC02_VC128,Estimate Margin of Error; PLACE OF BIRTH - Total population
+HC03_VC128,Percent; PLACE OF BIRTH - Total population
+HC04_VC128,Percent Margin of Error; PLACE OF BIRTH - Total population
+HC01_VC129,Estimate; PLACE OF BIRTH - Native
+HC02_VC129,Estimate Margin of Error; PLACE OF BIRTH - Native
+HC03_VC129,Percent; PLACE OF BIRTH - Native
+HC04_VC129,Percent Margin of Error; PLACE OF BIRTH - Native
+HC01_VC130,Estimate; PLACE OF BIRTH - Native - Born in United States
+HC02_VC130,Estimate Margin of Error; PLACE OF BIRTH - Native - Born in United States
+HC03_VC130,Percent; PLACE OF BIRTH - Native - Born in United States
+HC04_VC130,Percent Margin of Error; PLACE OF BIRTH - Native - Born in United States
+HC01_VC131,Estimate; PLACE OF BIRTH - Native - Born in United States - State of residence
+HC02_VC131,Estimate Margin of Error; PLACE OF BIRTH - Native - Born in United States - State of residence
+HC03_VC131,Percent; PLACE OF BIRTH - Native - Born in United States - State of residence
+HC04_VC131,Percent Margin of Error; PLACE OF BIRTH - Native - Born in United States - State of residence
+HC01_VC132,Estimate; PLACE OF BIRTH - Native - Born in United States - Different state
+HC02_VC132,Estimate Margin of Error; PLACE OF BIRTH - Native - Born in United States - Different state
+HC03_VC132,Percent; PLACE OF BIRTH - Native - Born in United States - Different state
+HC04_VC132,Percent Margin of Error; PLACE OF BIRTH - Native - Born in United States - Different state
+HC01_VC133,"Estimate; PLACE OF BIRTH - Native - Born in Puerto Rico, U.S. Island areas, or born abroad to American parent(s)"
+HC02_VC133,"Estimate Margin of Error; PLACE OF BIRTH - Native - Born in Puerto Rico, U.S. Island areas, or born abroad to American parent(s)"
+HC03_VC133,"Percent; PLACE OF BIRTH - Native - Born in Puerto Rico, U.S. Island areas, or born abroad to American parent(s)"
+HC04_VC133,"Percent Margin of Error; PLACE OF BIRTH - Native - Born in Puerto Rico, U.S. Island areas, or born abroad to American parent(s)"
+HC01_VC134,Estimate; PLACE OF BIRTH - Foreign born
+HC02_VC134,Estimate Margin of Error; PLACE OF BIRTH - Foreign born
+HC03_VC134,Percent; PLACE OF BIRTH - Foreign born
+HC04_VC134,Percent Margin of Error; PLACE OF BIRTH - Foreign born
+HC01_VC138,Estimate; U.S. CITIZENSHIP STATUS - Foreign-born population
+HC02_VC138,Estimate Margin of Error; U.S. CITIZENSHIP STATUS - Foreign-born population
+HC03_VC138,Percent; U.S. CITIZENSHIP STATUS - Foreign-born population
+HC04_VC138,Percent Margin of Error; U.S. CITIZENSHIP STATUS - Foreign-born population
+HC01_VC139,Estimate; U.S. CITIZENSHIP STATUS - Naturalized U.S. citizen
+HC02_VC139,Estimate Margin of Error; U.S. CITIZENSHIP STATUS - Naturalized U.S. citizen
+HC03_VC139,Percent; U.S. CITIZENSHIP STATUS - Naturalized U.S. citizen
+HC04_VC139,Percent Margin of Error; U.S. CITIZENSHIP STATUS - Naturalized U.S. citizen
+HC01_VC140,Estimate; U.S. CITIZENSHIP STATUS - Not a U.S. citizen
+HC02_VC140,Estimate Margin of Error; U.S. CITIZENSHIP STATUS - Not a U.S. citizen
+HC03_VC140,Percent; U.S. CITIZENSHIP STATUS - Not a U.S. citizen
+HC04_VC140,Percent Margin of Error; U.S. CITIZENSHIP STATUS - Not a U.S. citizen
+HC01_VC148,Estimate; YEAR OF ENTRY - Entered before 2000
+HC02_VC148,Estimate Margin of Error; YEAR OF ENTRY - Entered before 2000
+HC03_VC148,Percent; YEAR OF ENTRY - Entered before 2000
+HC04_VC148,Percent Margin of Error; YEAR OF ENTRY - Entered before 2000
+HC01_VC150,Estimate; YEAR OF ENTRY - Foreign born
+HC02_VC150,Estimate Margin of Error; YEAR OF ENTRY - Foreign born
+HC03_VC150,Percent; YEAR OF ENTRY - Foreign born
+HC04_VC150,Percent Margin of Error; YEAR OF ENTRY - Foreign born
+HC01_VC167,Estimate; LANGUAGE SPOKEN AT HOME - English only
+HC02_VC167,Estimate Margin of Error; LANGUAGE SPOKEN AT HOME - English only
+HC03_VC167,Percent; LANGUAGE SPOKEN AT HOME - English only
+HC04_VC167,Percent Margin of Error; LANGUAGE SPOKEN AT HOME - English only
+HC01_VC168,Estimate; LANGUAGE SPOKEN AT HOME - Language other than English
+HC02_VC168,Estimate Margin of Error; LANGUAGE SPOKEN AT HOME - Language other than English
+HC03_VC168,Percent; LANGUAGE SPOKEN AT HOME - Language other than English
+HC04_VC168,Percent Margin of Error; LANGUAGE SPOKEN AT HOME - Language other than English
+HC01_VC170,"Estimate; LANGUAGE SPOKEN AT HOME - Language other than English - Speak English less than ""very well"""
+HC02_VC170,"Estimate Margin of Error; LANGUAGE SPOKEN AT HOME - Language other than English - Speak English less than ""very well"""
+HC03_VC170,"Percent; LANGUAGE SPOKEN AT HOME - Language other than English - Speak English less than ""very well"""
+HC04_VC170,"Percent Margin of Error; LANGUAGE SPOKEN AT HOME - Language other than English - Speak English less than ""very well"""
+HC01_VC171,Estimate; LANGUAGE SPOKEN AT HOME - Language other than English - Spanish
+HC02_VC171,Estimate Margin of Error; LANGUAGE SPOKEN AT HOME - Language other than English - Spanish
+HC03_VC171,Percent; LANGUAGE SPOKEN AT HOME - Language other than English - Spanish
+HC04_VC171,Percent Margin of Error; LANGUAGE SPOKEN AT HOME - Language other than English - Spanish
+HC01_VC172,"Estimate; LANGUAGE SPOKEN AT HOME - Language other than English - Spanish - Speak English less than ""very well"""
+HC02_VC172,"Estimate Margin of Error; LANGUAGE SPOKEN AT HOME - Language other than English - Spanish - Speak English less than ""very well"""
+HC03_VC172,"Percent; LANGUAGE SPOKEN AT HOME - Language other than English - Spanish - Speak English less than ""very well"""
+HC04_VC172,"Percent Margin of Error; LANGUAGE SPOKEN AT HOME - Language other than English - Spanish - Speak English less than ""very well"""
+HC01_VC173,Estimate; LANGUAGE SPOKEN AT HOME - Language other than English - Other Indo-European languages
+HC02_VC173,Estimate Margin of Error; LANGUAGE SPOKEN AT HOME - Language other than English - Other Indo-European languages
+HC03_VC173,Percent; LANGUAGE SPOKEN AT HOME - Language other than English - Other Indo-European languages
+HC04_VC173,Percent Margin of Error; LANGUAGE SPOKEN AT HOME - Language other than English - Other Indo-European languages
+HC01_VC174,"Estimate; LANGUAGE SPOKEN AT HOME - Language other than English - Other Indo-European languages - Speak English less than ""very well"""
+HC02_VC174,"Estimate Margin of Error; LANGUAGE SPOKEN AT HOME - Language other than English - Other Indo-European languages - Speak English less than ""very well"""
+HC03_VC174,"Percent; LANGUAGE SPOKEN AT HOME - Language other than English - Other Indo-European languages - Speak English less than ""very well"""
+HC04_VC174,"Percent Margin of Error; LANGUAGE SPOKEN AT HOME - Language other than English - Other Indo-European languages - Speak English less than ""very well"""
+HC01_VC175,Estimate; LANGUAGE SPOKEN AT HOME - Language other than English - Asian and Pacific Islander languages
+HC02_VC175,Estimate Margin of Error; LANGUAGE SPOKEN AT HOME - Language other than English - Asian and Pacific Islander languages
+HC03_VC175,Percent; LANGUAGE SPOKEN AT HOME - Language other than English - Asian and Pacific Islander languages
+HC04_VC175,Percent Margin of Error; LANGUAGE SPOKEN AT HOME - Language other than English - Asian and Pacific Islander languages
+HC01_VC176,"Estimate; LANGUAGE SPOKEN AT HOME - Language other than English - Asian and Pacific Islander languages - Speak English less than ""very well"""
+HC02_VC176,"Estimate Margin of Error; LANGUAGE SPOKEN AT HOME - Language other than English - Asian and Pacific Islander languages - Speak English less than ""very well"""
+HC03_VC176,"Percent; LANGUAGE SPOKEN AT HOME - Language other than English - Asian and Pacific Islander languages - Speak English less than ""very well"""
+HC04_VC176,"Percent Margin of Error; LANGUAGE SPOKEN AT HOME - Language other than English - Asian and Pacific Islander languages - Speak English less than ""very well"""
+HC01_VC177,Estimate; LANGUAGE SPOKEN AT HOME - Language other than English - Other languages
+HC02_VC177,Estimate Margin of Error; LANGUAGE SPOKEN AT HOME - Language other than English - Other languages
+HC03_VC177,Percent; LANGUAGE SPOKEN AT HOME - Language other than English - Other languages
+HC04_VC177,Percent Margin of Error; LANGUAGE SPOKEN AT HOME - Language other than English - Other languages
+HC01_VC178,"Estimate; LANGUAGE SPOKEN AT HOME - Language other than English - Other languages - Speak English less than ""very well"""
+HC02_VC178,"Estimate Margin of Error; LANGUAGE SPOKEN AT HOME - Language other than English - Other languages - Speak English less than ""very well"""
+HC03_VC178,"Percent; LANGUAGE SPOKEN AT HOME - Language other than English - Other languages - Speak English less than ""very well"""
+HC04_VC178,"Percent Margin of Error; LANGUAGE SPOKEN AT HOME - Language other than English - Other languages - Speak English less than ""very well"""
