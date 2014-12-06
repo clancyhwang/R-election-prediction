@@ -9,6 +9,7 @@
 library(XML)
 library(rpart)
 library(class)
+library(maps)
 
 #STEP2
 #doc1
@@ -34,20 +35,20 @@ getPopulation=function(xmlfile, state){
   candidate = candidate[-1]
   popular = xpathSApply(xmlfile,"//td[@class='results-popular']",xmlValue)
   popular = as.numeric(gsub(",","",popular))
-  
-  popular1=popular[candidate=="B. Obama (i)"]
-  popular2=popular[candidate=="M. Romney"]
+    
+  voteDEM12=popular[candidate=="B. Obama (i)"]
+  voteGOP12=popular[candidate=="M. Romney"]
   party=character()
   
   for(i in 1:length(county)){
-    if(popular1[i]>popular2[i]){
+    if(voteDEM12[i]>voteGOP12[i]){
       party[i]="DEM"
     }else{
       party[i]="GOP"
     }
   }
   
-  return(cbind(county,party))
+  return(cbind(county, party, voteDEM12, voteGOP12))
 }
 
 doc1 = xmlParse("http://www.stat.berkeley.edu/~nolan/data/Project2012/countyVotes2012/alabama.xml")
@@ -132,8 +133,8 @@ colnames(second)[1] = "county"
 
 #doc3
 doc3 = xmlParse("http://www.stat.berkeley.edu/users/nolan/data/Project2012/counties.gml")
-latitude = as.numeric(xpathSApply(doc3,"//gml:X",xmlValue))
-long = as.numeric(xpathSApply(doc3,"//gml:Y",xmlValue))
+latitude = as.numeric(xpathSApply(doc3,"//gml:X",xmlValue))/1000000
+long = as.numeric(xpathSApply(doc3,"//gml:Y",xmlValue))/1000000
 county = xpathSApply(doc3,"/doc/state/county/gml:name",xmlValue)
 county1 = xpathSApply(doc3,"//gml:name",xmlValue)
 state = xpathSApply(doc3,"/doc/state/gml:name",xmlValue)
@@ -165,7 +166,7 @@ third = data.frame("county"=county, "latitude"=latitude, "longitude"=long)
 combinedData = merge(first, second, by.x = "county", by.y = "county", all.x = T)
 combinedData = merge(third, combinedData, by.x = "county", by.y = "county", all.y = T)
 colnames(combinedData)[4] = "winParty12"
-colnames(combinedData)[5] = "majorRace"
+colnames(combinedData)[7] = "majorRace"
 
 #STEP3
 # Hao Huang worked on rpart() of step3, assisted by Shiyun Shao
@@ -199,19 +200,22 @@ for(i in 1:nrow(data2004)){
   data2004$winParty[i] = win
 }
 
-data2004 = data2004[,4:5]
-colnames(data2004) = c("county", "winParty04")
+data2004 = data2004[,-1]
+data2004 = data2004[c(3,4,1,2)]
+colnames(data2004) = c("county", "winParty04", "voteGOP04", "voteDEM04")
 
 data04and12 = merge(data2004, combinedData, by.x = "county", by.y = "county", all.x = T)
 data04and12 = data04and12[-2376,]
 data04and12 = data04and12[-275,]
 
-electionResult2012 = data.frame(data04and12[,5])
+matrix = data04and12[complete.cases(data04and12),]
+
+electionResult2012 = data.frame(matrix[,7])
 colnames(electionResult2012) = "electionResult2012"
 
-matrix = data04and12[,-5]
+matrix = matrix[,-7]
+matrixvote = matrix[,c(1,3,4,7,8)]
 
-#rpart
 variables = c("county", "winParty04", "latitude", "longitude",
               "household_HC03_VC134","household_HC03_VC94",
               "household_HC03_VC168","household_HC03_VC40","household_HC03_VC18",
@@ -231,32 +235,169 @@ colnames(matrix) = c("county", "winParty04", "latitude", "longitude",
                      "Commuting to Work",
                      "Job industry"
 )
+
+#rpart
 matrix$winParty04 = as.factor(matrix$winParty04)
 matrix = matrix[,-1]
 rpartmodel = rpart(winParty04~., method = "class", data = matrix)
 
 # quartz(width = 7, height = 7)
 png("rpartplot1.png", width = 1500, height = 1000)
-plot(rpartmodel, uniform=TRUE, main="")
-text(rpartmodel, use.n=TRUE, all=TRUE, cex=.8)
+plot(rpartmodel, uniform=TRUE)
+text(rpartmodel, use.n=TRUE, all=TRUE)
 dev.off()
 rpartSummary = summary(rpartmodel)
 rpartpredicted = predict(rpartmodel)
 
 #knn
+knnpredicted = list()
 
-matrix1 = matrix[complete.cases(matrix),]
-matrix1 = matrix1[,2:3]
-pred = knn(matrix1[,2:3], matrix1[,2:3], matrix1$winParty04, k=10)
+for(i in 1:100){
+  
+  knnpredicted[[i]] = knn(matrix[,2:ncol(matrix)], matrix[,2:ncol(matrix)], matrix$winParty04, k=i)
+  
+}
+trueResult = as.vector(electionResult2012)
+
+errs = numeric()
+for(i in 1:100){
+  
+  assess = table(knnpredicted[[i]], electionResult2012[,1])
+  errs[i] = (assess[1,2] + assess[2, 1]) / length(electionResult2012[,1])
+  
+}
 
 
+#STEP4
+#knnplot1
+png("knnplot1.png", width = 1500, height = 1000)
+
+plot(1:100, errs, pch = 19, cex =0.7, main = "KNN Errors from different K Value (1 to 100)",
+     xlab = "K Value", ylab = "KNN Errors")
+
+dev.off()
+
+#rpartImportance
+png("rpartImportance.png", width = 1000, height = 800)
+x = c(19,18,17,14,9,8,5,5,2,1,1,1,1)
+barplot(x, xlab = "variable predictors", ylab = "importance", main = "Importance of rpart variable predictors", names.arg=c("var1", "var2","var3","var4","var5","var6","var7","var8","var9",
+"var10","var11","var12","var13"), las = 1, space = 10, ylim = c(0, 20), col = "red")
+text(100,19,"var1: Percent; COMMUTING TO WORK - Public transportation")
+text(90,19-0.8,"var2: PERCENTAGE OF FAMILIES AND PEOPLE INCOME BELOW THE POVERTY LEVEL - All families")
+text(100,19-0.8*2,"var3: latitude")
+text(90,19-0.8*3,"var4: PERCENTAGE OF FAMILIES AND PEOPLE INCOME BELOW THE POVERTY LEVEL - All people")
+text(100,19-0.8*4,"var5: Percent Unemployed")
+text(100,19-0.8*5,"var6: Percent INCOME AND BENEFITS Less than $10,000")
+text(100,19-0.8*6,"var7: longitude")
+text(100,19-0.8*7,"var8: Percent bachelor's degree or higher")
+text(100,19-0.8*8,"var9: Percent; LANGUAGE SPOKEN AT HOME other than English")
+text(100,19-0.8*9,"var10: Percent; PLACE OF BIRTH - Foreign born")
+text(100,19-0.8*10,"var11: Percent; Households with one or more people 65 years and over")
+text(100,19-0.8*11,"var12: Percent; INDUSTRY - Educational services, and health care and social assistance")
+text(100,19-0.8*12,"var13: Percent; Divorced - Males 15 years and over")
+dev.off()
 
 
+#fancy plot
+matrixvote[,2:5] = apply(matrixvote[,2:5], 2, as.numeric)
+GOPdiff = (matrixvote$voteGOP12 - matrixvote$voteGOP04) / matrixvote$voteGOP04
+DEMdiff = (matrixvote$voteDEM12 - matrixvote$voteDEM04) / matrixvote$voteDEM04
+
+resultdiff = data.frame(1:nrow(matrixvote),1:nrow(matrixvote))
+colnames(resultdiff) = c("winParty", "diff")
+
+for(i in 1:nrow(matrixvote)){
+  if(abs(GOPdiff[i]) > abs(DEMdiff[i])){
+    resultdiff$diff[i] = GOPdiff[i]
+    resultdiff$winParty[i] = "GOP"
+  }else{
+    resultdiff$diff[i] = DEMdiff[i]
+    resultdiff$winParty[i] = "DEM"
+  }
+}
+
+resultdiff = cbind(matrixvote$county, resultdiff, matrix[,2:3])
+colnames(resultdiff)[1] = "county"
+
+png("fancyplot.png", width = 1500, height = 1000)
+
+map(database = "usa", col="grey", fill = T, myborder = 0)
+map(database = "state", col="grey", fill = T, myborder = 0)
+map(database = "county", col="grey", fill = T, myborder = 0)
+
+angle = resultdiff$diff * 65
+angle[which(resultdiff$diff < 0)] = resultdiff$diff[which(resultdiff$diff < 0)] * 108
+
+arlength = abs(resultdiff$diff * 2.4)
+arlength[which(resultdiff$diff < 0)] = abs(resultdiff$diff[which(resultdiff$diff < 0)] * 3.8)
+
+hlength = numeric()
+hlength[which(arlength >2)] = 0.09
+hlength[which(arlength >1 & arlength < 2)] = 0.07
+hlength[which(arlength < 1)] = 0.05
+
+x1 = resultdiff$latitude + cos(angle*0.01745)*(arlength)
+y1 = resultdiff$longitude + sin(angle*0.01745)*(arlength)
+
+arcol = character()
+arcol[which(resultdiff$winParty == "DEM")] = "red"
+arcol[which(resultdiff$winParty == "GOP")] = "blue"
+
+arrows(resultdiff$latitude, resultdiff$longitude, x1, y1, length = 0.09, cex =0.1, col = arcol, lwd = 2)
+
+dev.off()
+
+#rpart colored
+predictedresult = character(2808)
+for(i in 1:nrow(rpartpredicted)){
+  if(rpartpredicted[i,1] > rpartpredicted[i,2]){
+    predictedresult[i] = "DEM"
+  }else{
+    predictedresult[i] = "GOP"
+  }
+}
+
+rpartcol = character()
+rpartcol[which(predictedresult == electionResult2012)] = "green"
+rpartcol[which(predictedresult != electionResult2012)] = "grey"
 
 
+png("rpartcolored.png", width = 1500, height = 1000)
+
+rpartregion = character()
+for(i in 1:nrow(resultdiff)){
+  row = resultdiff[i,]
+  countyColumn = as.character(resultdiff$county[i])
+  state = unlist(strsplit(countyColumn, "[,]"))[2]
+  state = sub(" ", "", state)
+  c = unlist(strsplit(countyColumn, "[,]"))[1]
+  c = sub(" County", "", c)
+  result = paste(tolower(state), tolower(c), sep=",")
+  rpartregion[i] = result 
+}
+map(database = "usa", myborder = 0)
+map(database = "state", myborder = 0)
+
+for(i in 1:length(rpartcol)){
+  map(database = "county", col = rpartcol[i], regions = rpartregion[i], fill = T, myborder = 0, add = T)
+}
+
+dev.off()
 
 
+#knn colored
+knncol = character()
+knncol[which(as.character(knnpredicted[[10]]) == electionResult2012)] = "green"
+knncol[which(as.character(knnpredicted[[10]]) != electionResult2012)] = "grey"
 
 
+png("knncolored.png", width = 1500, height = 1000)
 
+map(database = "usa", myborder = 0)
+map(database = "state", myborder = 0)
 
+for(i in 1:length(knncol)){
+  map(database = "county", col = knncol[i], regions = rpartregion[i], fill = T, myborder = 0, add = T)
+}
+
+dev.off()

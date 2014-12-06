@@ -1,8 +1,27 @@
-#modified county name of first
+# Group Name: WeTheDragons
+# Group members:
+# Zhou, Qi
+# Huang, Hao
+# Shao, Shiyun
+# Lin, Wei
+# Xue, Peng
+
+library(XML)
+library(rpart)
+library(class)
+library(maps)
+
+#STEP2
 #doc1
 state=read.csv("http://www.stat.berkeley.edu/users/nolan/data/Project2012/countyVotes2012/stateNames.txt")
 state=as.character(state[-2,])
-library(XML)
+
+
+simpleCap <- function(x) {
+  s <- strsplit(x, " ")[[1]]
+  paste(toupper(substring(s, 1,1)), substring(s, 2),
+        sep="", collapse=" ")
+}
 
 getPopulation=function(xmlfile, state){
   county = xpathSApply(xmlfile,"//th[@class='results-county']",xmlValue)
@@ -17,33 +36,35 @@ getPopulation=function(xmlfile, state){
   popular = xpathSApply(xmlfile,"//td[@class='results-popular']",xmlValue)
   popular = as.numeric(gsub(",","",popular))
   
-  popular1=popular[candidate=="B. Obama (i)"]
-  popular2=popular[candidate=="M. Romney"]
+  voteDEM12=popular[candidate=="B. Obama (i)"]
+  voteGOP12=popular[candidate=="M. Romney"]
   party=character()
   
   for(i in 1:length(county)){
-    if(popular1[i]>popular2[i]){
+    if(voteDEM12[i]>voteGOP12[i]){
       party[i]="DEM"
     }else{
       party[i]="GOP"
     }
   }
   
-  return(cbind(county,party))
+  return(cbind(county, party, voteDEM12, voteGOP12))
 }
 
 doc1 = xmlParse("http://www.stat.berkeley.edu/~nolan/data/Project2012/countyVotes2012/alabama.xml")
 first = getPopulation(doc1,"Alabama")
 
+updatedstate = gsub("-"," ", state)
 for(i in 2:50){
   file = paste("http://www.stat.berkeley.edu/~nolan/data/Project2012/countyVotes2012/",state[i],".xml",sep="")
   doc1 = xmlParse(file)
-  first = rbind(first,getPopulation(doc1, state[i]))
+  first = rbind(first,getPopulation(doc1, simpleCap(updatedstate[i])))
 }
 first = as.data.frame(first)
 
+
 #doc2
-doc201 = read.csv("B01003.csv")[1:7857,]
+doc201 = read.csv("http://www.stat.berkeley.edu/users/nolan/data/Project2012/census2010/B01003.csv")[1:7857,]
 doc201 = doc201[-(199:259),]
 names = as.character(unique(doc201$GEO.display.label))
 
@@ -65,48 +86,55 @@ for(name in names){
 doc201 = doc201[rowsNeeded, ]
 doc201 = subset(doc201, select = c("GEO.display.label","POPGROUP.display.label"))
 doc201$GEO.display.label=as.character(doc201$GEO.display.label)
-doc201$GEO.display.label[1773] = "Dona Ana County, new-mexico"
+doc201$GEO.display.label[1773] = "Dona Ana County, New Mexico"
+doc201$GEO.display.label = gsub("Parish", "County", doc201$GEO.display.label)
 
-# which(doc201$POPGROUP.display.label=="Black or African American alone")
-
-# doc202 = read.csv("DP02.csv")
-# doc202 = doc202[-(68:96),4:ncol(doc202)] # no alaska
-# 
-# doc203 = read.csv("DP03.csv")[1:3139,] #no puerto
-# doc203 = doc203[-(68:96),4:ncol(doc203)] # no alaska
-
-doc202 = read.csv("DP02.csv")
+doc202 = read.csv("http://www.stat.berkeley.edu/users/nolan/data/Project2012/census2010/DP02.csv")
 doc202 = doc202[-(68:96),3:ncol(doc202)] # no alaska
 doc202 = doc202[,-(2:3)]
 doc202$GEO.display.label = as.character(doc202$GEO.display.label)
-doc202$GEO.display.label[1803-29-1] = "Dona Ana County, new-mexico"
+doc202$GEO.display.label[1803-29-1] = "Dona Ana County, New Mexico"
+doc202$GEO.display.label = gsub("Parish", "County", doc202$GEO.display.label)
+NewNames = character()
+for(name in colnames(doc202)){
+  if(name == "GEO.display.label"){
+    newName = name
+  }else{
+    newName = paste("household_", name, sep = "")
+  }
+  NewNames = c(NewNames, newName)
+}
+colnames(doc202) = NewNames
 
-doc203 = read.csv("DP03.csv")[1:3139,] #no puerto
+doc203 = read.csv("http://www.stat.berkeley.edu/users/nolan/data/Project2012/census2010/DP03.csv")[1:3139,] #no puerto
 doc203 = doc203[-(68:96),3:ncol(doc203)] # no alaska
 doc203 = doc203[,-(2:3)]
 doc203$GEO.display.label = as.character(doc202$GEO.display.label)
-doc203$GEO.display.label[1803-29-1] = "Dona Ana County, new-mexico"
+doc203$GEO.display.label[1803-29-1] = "Dona Ana County, New Mexico"
+doc203$GEO.display.label = gsub("Parish", "County", doc203$GEO.display.label)
 
 NewNames = character()
 for(name in colnames(doc203)){
   if(name == "GEO.display.label"){
     newName = name
   }else{
-    newName = paste("error_", name, sep = "")
+    newName = paste("employ_", name, sep = "")
   }
   NewNames = c(NewNames, newName)
 }
 
 colnames(doc203) = NewNames
 
-second = merge(doc201, doc202)
+second = merge(doc201, doc202, by.x = "GEO.display.label", by.y = "GEO.display.label")
 
-second = merge(second, doc203)
+second = merge(second, doc203, by.x = "GEO.display.label", by.y = "GEO.display.label")
+
+colnames(second)[1] = "county"
 
 #doc3
 doc3 = xmlParse("http://www.stat.berkeley.edu/users/nolan/data/Project2012/counties.gml")
-latitude = as.numeric(xpathSApply(doc3,"//gml:X",xmlValue))
-long = as.numeric(xpathSApply(doc3,"//gml:Y",xmlValue))
+latitude = as.numeric(xpathSApply(doc3,"//gml:X",xmlValue))/1000000
+long = as.numeric(xpathSApply(doc3,"//gml:Y",xmlValue))/1000000
 county = xpathSApply(doc3,"/doc/state/county/gml:name",xmlValue)
 county1 = xpathSApply(doc3,"//gml:name",xmlValue)
 state = xpathSApply(doc3,"/doc/state/gml:name",xmlValue)
@@ -129,6 +157,168 @@ state = rep(state, rept)
 county = gsub("\n    ","",county)
 county = paste(county, ", ",sep = "")
 county = paste(county, state, sep="")
+county = gsub("Parish", "County", county)
 
 third = data.frame("county"=county, "latitude"=latitude, "longitude"=long)
 
+
+#merging 3 resources
+combinedData = merge(first, second, by.x = "county", by.y = "county", all.x = T)
+combinedData = merge(third, combinedData, by.x = "county", by.y = "county", all.y = T)
+colnames(combinedData)[4] = "winParty12"
+colnames(combinedData)[7] = "majorRace"
+
+#STEP3
+# Hao Huang worked on rpart() of step3, assisted by Shiyun Shao
+# Qi Zhou leads the other two members worked on knn() of step3
+# we all worked on manipulating 2004 data
+
+data2004 = read.table("http://www.stat.berkeley.edu/~nolan/data/Project2012/countyVotes2004.txt")
+#bush == GOP kerry == DEM
+colnames(data2004) = c("countyName", "GOP", "DEM")
+data2004 = data2004[-1,]
+
+#manipulate county names
+for(i in 1:nrow(data2004)){
+  row = data2004[i,]
+  countyColumn = as.character(data2004$countyName[i])
+  state = unlist(strsplit(countyColumn, "[,]"))[1]
+  c = unlist(strsplit(countyColumn, "[,]"))[2]
+  result = paste(simpleCap(c), " County, ", sep="")
+  result = paste(result, simpleCap(state), sep="")
+  data2004$NewCountyName[i] = result 
+}
+
+#add winParty column
+for(i in 1:nrow(data2004)){
+  row = data2004[i,]
+  if ( as.numeric(as.character(data2004$GOP[i])) >= as.numeric(as.character(data2004$DEM[i]))){
+    win = "GOP"
+  }else{
+    win = "DEM"
+  }
+  data2004$winParty[i] = win
+}
+
+data2004 = data2004[,-1]
+data2004 = data2004[c(3,4,1,2)]
+colnames(data2004) = c("county", "winParty04", "voteGOP04", "voteDEM04")
+
+data04and12 = merge(data2004, combinedData, by.x = "county", by.y = "county", all.x = T)
+data04and12 = data04and12[-2376,]
+data04and12 = data04and12[-275,]
+
+matrix = data04and12[complete.cases(data04and12),]
+
+electionResult2012 = data.frame(matrix[,7])
+colnames(electionResult2012) = "electionResult2012"
+
+matrix = matrix[,-7]
+matrixvote = matrix[,c(1,3,4,7,8)]
+
+variables = c("county", "winParty04", "latitude", "longitude",
+              "household_HC03_VC134","household_HC03_VC94",
+              "household_HC03_VC168","household_HC03_VC40","household_HC03_VC18",
+              "employ_HC03_VC13","employ_HC03_VC75","employ_HC03_VC156",
+              "employ_HC03_VC166","employ_HC03_VC31","employ_HC03_VC59")
+matrix = matrix[, variables]
+colnames(matrix) = c("county", "winParty04", "latitude", "longitude",
+                     "Foreign born",
+                     "Education degree",
+                     "Language",
+                     "Divorced Males",
+                     "Elders",
+                     "Unemployed",
+                     "Income",
+                     "Poverty level all families",
+                     "Poverty level all people",
+                     "Commuting to Work",
+                     "Job industry"
+)
+
+#rpart
+matrix$winParty04 = as.factor(matrix$winParty04)
+matrix = matrix[,-1]
+rpartmodel = rpart(winParty04~., method = "class", data = matrix)
+
+# quartz(width = 7, height = 7)
+png("rpartplot1.png", width = 1500, height = 1000)
+plot(rpartmodel, uniform=TRUE, main="")
+text(rpartmodel, use.n=TRUE, all=TRUE)
+dev.off()
+rpartSummary = summary(rpartmodel)
+rpartpredicted = predict(rpartmodel)
+
+#knn
+knnpredicted = list()
+
+for(i in 1:100){
+  
+  knnpredicted[[i]] = knn(matrix[,2:ncol(matrix)], matrix[,2:ncol(matrix)], matrix$winParty04, k=i)
+  
+}
+
+errs = numeric()
+for(i in 1:100){
+  
+  assess = table(knnpredicted[[i]], electionResult2012[,1])
+  errs[i] = (assess[1,2] + assess[2, 1]) / length(electionResult2012[,1])
+  
+}
+
+
+#STEP4
+
+png("knnplot1.png", width = 1500, height = 1000)
+
+plot(1:100, errs, pch = 19, cex =0.7, main = "KNN Errors from different K Value (1 to 100)",
+     xlab = "K Value", ylab = "KNN Errors")
+
+dev.off()
+
+matrixvote[,2:5] = apply(matrixvote[,2:5], 2, as.numeric)
+GOPdiff = (matrixvote$voteGOP12 - matrixvote$voteGOP04) / matrixvote$voteGOP04
+DEMdiff = (matrixvote$voteDEM12 - matrixvote$voteDEM04) / matrixvote$voteDEM04
+
+resultdiff = data.frame(1:nrow(matrixvote),1:nrow(matrixvote))
+colnames(resultdiff) = c("winParty", "diff")
+
+for(i in 1:nrow(matrixvote)){
+  if(abs(GOPdiff[i]) > abs(DEMdiff[i])){
+    resultdiff$diff[i] = GOPdiff[i]
+    resultdiff$winParty[i] = "GOP"
+  }else{
+    resultdiff$diff[i] = DEMdiff[i]
+    resultdiff$winParty[i] = "DEM"
+  }
+}
+
+resultdiff = cbind(matrixvote$county, resultdiff, matrix[,2:3])
+
+png("fancyplot.png", width = 1500, height = 1000)
+
+map(database = "usa", col="grey", fill = T, myborder = 0)
+map(database = "state", col="grey", fill = T, myborder = 0)
+map(database = "county", col="grey", fill = T, myborder = 0)
+
+angle = resultdiff$diff * 65
+angle[which(resultdiff$diff < 0)] = resultdiff$diff[which(resultdiff$diff < 0)] * 108
+
+arlength = abs(resultdiff$diff * 2.4)
+arlength[which(resultdiff$diff < 0)] = abs(resultdiff$diff[which(resultdiff$diff < 0)] * 3.8)
+
+hlength = numeric()
+hlength[which(arlength >2)] = 0.09
+hlength[which(arlength >1 & arlength < 2)] = 0.07
+hlength[which(arlength < 1)] = 0.05
+
+x1 = resultdiff$latitude + cos(angle*0.01745)*(arlength)
+y1 = resultdiff$longitude + sin(angle*0.01745)*(arlength)
+
+arcol = character()
+arcol[which(resultdiff$winParty == "DEM")] = "red"
+arcol[which(resultdiff$winParty == "GOP")] = "blue"
+
+arrows(resultdiff$latitude, resultdiff$longitude, x1, y1, length = 0.09, cex =0.1, col = arcol, lwd = 2)
+
+dev.off()

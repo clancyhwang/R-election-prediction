@@ -1,0 +1,111 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html> <head>
+<title>WeTheDragons</title>
+
+  <style type="text/css">
+  h1 {
+    font-family: Helvetica, Geneva, Arial,
+          SunSans-Regular, sans-serif;
+    color: purple; }
+  figcaption {
+    font-style: italic;
+    /*font-size: 80%;*/
+}
+  </style>
+</head>
+
+<body>
+<h1>FALL2014 STAT133 Final Project Plots</h1>
+<h3>2012 Election Prediction</h3>
+<h4>Group Name: </br> WeTheDragons</br>
+Group members:</br>
+Zhou, Qi</br>
+Huang, Hao</br>
+Shao, Shiyun</br>
+Lin, Wei</br>
+Xue, Peng
+</h4>
+
+<h4>From knn predictor</h4>
+<figure align="center">
+<img src="knnplot1.png" height="800" width="1200"/>
+<figcaption>
+    This plot shows the prediction errors comparing to the true 2012 election result with different k values of k-nearest neighbors model. The knn model was trained by data from 2004 election result and other resources. It shows that higher k value gives greater error rates.
+</figcaption>
+</figure>
+
+</br>
+</br>
+</br>
+</br>
+</br>
+
+<h4>From rpart predictor</h4>
+<figure align="center">
+<img src="rpartImportance.png" height="800" width="1200"/>
+<figcaption>
+  This plot compares the importance of the 13 variables we choose in the rpart predictor. It was surprised to see that var1: the percentage of public transportation for commuting to work is the most important variable in this predictor. After researching, transportation policy is really a big deal affecting people's decision on election. GOP's transportation bill would eviscerate mass transit funding(http://thehill.com/blogs/congress-blog/economy-a-budget/208937-rep-jerrold-nadler-d-ny), this source gives a proof how transportation is a very important aspect in election.
+</figcaption>
+</figure>
+
+</br>
+</br>
+</br>
+</br>
+</br>
+
+<h3>Prediction result model comparison rpart vs. knn</h3>
+</br>
+<h4>rpart model</h4>
+<figure align="center">
+<img src="rpartcolored.png" height="800" width="1200"/>
+<figcaption>
+  Legend:</br>
+  green: correct prediction, grey: incorrect prediction, white: no data</br></br>
+  From rpart model prediction result, we colored US counties on the map.
+</figcaption>
+</figure>
+
+</br>
+</br>
+</br>
+
+<h4>knn model with k=10</h4>
+<figure align="center">
+<img src="knncolored.png" height="800" width="1200"/>
+<figcaption>
+  Legend:</br>
+  green: correct prediction, grey: incorrect prediction, white: no data</br></br>
+  From knn model with k=10 prediction result, we colored US counties on the map.
+</figcaption>
+</figure>
+</br>
+<h3>Conclusion: These two models have very closed error rate: around 13% error rate,
+  so they can be both considered as good predition.
+</h3>
+
+</br>
+</br>
+</br>
+</br>
+</br>
+
+<h4>Fancy Plot</h4>
+<figure align="center">
+<img src="fancyplot.png" height="800" width="1200"/>
+<figcaption>
+  This plot shows the change in votes bewteen 2004 election and 2012 election for DEM(red) and GOP(blue). First, the lenght of arrows indicate the proportional to the vote shift from the 2004 and the 2012 election. We calculate the proportional for both GOP and DEM in each county, and choosing the greater one in absolute value as our proportional showing on the graph. Then, the upward direction show that the proportional to the vote is increase, and the downward direction show the propotional to the vote is decrease. Moreover, the  angle of arrows changes by its proportional. The vertical upward direction shows the maximum increasing in the propotional, and the vertical downward direction shows the maximum decreasing in the proportional. Finally, the red color indicates DEM party, and the blue color indicates GOP party. Then, we can easily figure out how each county change their votes from 2004 to 2012.
+</figcaption>
+</figure>
+
+</br>
+</figcaption>
+</figure>
+
+</br>
+</br>
+</br>
+</br>
+</br>
+
+</body> </html>

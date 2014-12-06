@@ -12,3 +12,18 @@ HC03_VC156,Percent; PERCENTAGE OF FAMILIES AND PEOPLE WHOSE INCOME IN THE PAST 1
 HC03_VC166,Percent; PERCENTAGE OF FAMILIES AND PEOPLE WHOSE INCOME IN THE PAST 12 MONTHS IS BELOW THE POVERTY LEVEL - All people
 HC03_VC31,Percent; COMMUTING TO WORK - Public transportation (excluding taxicab) 
 HC03_VC59,"Percent; INDUSTRY - Educational services, and health care and social assistance" 
+
+         Commuting to Work Poverty level all families 
+                        19                         18 
+                  latitude   Poverty level all people 
+                        17                         14 
+                Unemployed                     Income 
+                         9                          8 
+                 longitude           Education degree 
+                         5                          5 
+                  Language               Foreign born 
+                         2                          1 
+                    Elders               Job industry 
+                         1                          1 
+            Divorced Males 
+                         1 
