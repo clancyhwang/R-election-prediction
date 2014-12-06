@@ -5,4 +5,4 @@ This is a project for 2012 presidential election prediction based on 2004 electi
 See HTML file for plots generated from two predictor models.
 
 Here is one of the plots in the project
-![Alt text](http://rpartcolored.png)
+![alt tag](https://raw.github.com/clancyhwang/R-election-prediction/rpartcolored.png)
